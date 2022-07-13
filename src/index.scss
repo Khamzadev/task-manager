@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.todo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 750px;
+  height: 530px;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 20px #f3f3f3;
+  border-radius: 10px;
+  border: 1px solid #f4f6f8;
+  font-size: 14px;
+  &__sidebar {
+    background-color: #f4f6f8;
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid #f1f1f1;
+    padding: 60px 20px;
+  }
+}
