@@ -12,17 +12,17 @@
       li {
         display: flex;
         justify-content: space-between;
-        i{
-          cursor:pointer;
+        i {
+          cursor: pointer;
         }
       }
     }
-      &-close-btn{
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    cursor: pointer;
-  }
+    &-close-btn {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      cursor: pointer;
+    }
   }
 
   .button {
@@ -30,15 +30,12 @@
     margin-top: 15px;
   }
 
-
-
   .badge {
     position: static;
     width: 20px;
     height: 20px;
-    
 
-    &:active{
+    &:active {
       border: 2px solid black;
     }
   }

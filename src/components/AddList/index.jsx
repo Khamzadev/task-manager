@@ -5,11 +5,30 @@ import List from "../List";
 import Badge from "../Badge";
 import "./AddListButton.scss";
 
-const AddButtonList = ({ colors }) => {
+const AddButtonList = ({ colors , onAdd}) => {
+  // hooks
   const [visiblePopup, setVisiblePopup] = useState(true);
-  const [selectedColor, setSelectedColor] = useState(null);
-  console.log(selectedColor);
-  return (
+  const [selectedColor, setSelectedColor] = useState(colors[0].id);
+  const [inputValue, setInputValue] = useState('');
+
+  const addList = () => {
+    if(!inputValue){
+      alert('Введите название списка')
+      return
+    }
+
+    const color = colors.filter(c => c.id === selectedColor)[0].name
+
+    onAdd({
+      id: Math.random(),
+      name: inputValue,
+      color: color,
+    });
+
+    setVisiblePopup(false)
+  }
+
+  return ( 
     <div className="add-list">
       <List
         onClick={() => setVisiblePopup(!visiblePopup)}
@@ -25,7 +44,8 @@ const AddButtonList = ({ colors }) => {
             onClick={() => setVisiblePopup(false)}
           />
 
-          <input className="field" type="text" placeholder="Название задачи" />
+          <input value={inputValue} onChange={e => setInputValue(e.target.value)} className="field" type="text" placeholder="Название задачи" />
+
           <div className="add-list-popup-colors">
             <ul>
               <li>
@@ -40,7 +60,7 @@ const AddButtonList = ({ colors }) => {
               </li>
             </ul>
           </div>
-          <button className="button">Добавить</button>
+          <button onClick={addList} className="button">Добавить</button>
         </div>
       )}
     </div>
