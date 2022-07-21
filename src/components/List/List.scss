@@ -1,4 +1,5 @@
 .list {
+  $self:&;
   margin-bottom: 30px;
   li {
     display: flex;
@@ -7,9 +8,19 @@
     padding: 10px 12px;
     margin-bottom: 5px;
 
+   &:hover #{$self}__remove-icon{
+      opacity: 0.3;
+    }
+
+    span{
+      flex: 1;
+    }
+
     &:hover {
       background-color: rgba(255, 255, 255, 0.6);
     }
+
+
 
     &.active {
       background-color: #fff;
@@ -20,5 +31,9 @@
       margin-right: 10px;
       display: inline-flex;
     }
+  }
+
+  &__remove-icon{
+    opacity: 0;
   }
 }
