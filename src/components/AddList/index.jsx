@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import addSvg from "../../assets/img/add.svg";
 import closeSvg from "../../assets/img/close.svg";
 import List from "../List";
@@ -8,8 +8,16 @@ import "./AddListButton.scss";
 const AddButtonList = ({ colors, onAdd }) => {
   // hooks
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(colors[0].id);
+  const [selectedColor, setSelectedColor] = useState(3);
+  const [seletedColor, selectColor] = useState(3);
   const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    if (Array.isArray(colors)) {
+      selectColor(colors[0].id);
+    }
+  }, [colors]);
+
 
   const onClose = () => {
     setVisiblePopup(false);

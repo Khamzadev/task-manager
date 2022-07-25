@@ -8,11 +8,10 @@ import Badge from "../../components/Badge";
 const List = ({ items, isRemovable, onClick, onRemove }) => {
 
   const removeList = (item) => {
-    if(window.confirm('Вы действительно хотите удалить список ?')){
-      onRemove(item)
+    if (window.confirm("Вы действительно хотите удалить список ?")) {
+      onRemove(item);
     }
-  }
-
+  };
 
   return (
     <>
